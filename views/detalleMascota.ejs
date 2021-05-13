@@ -1,0 +1,43 @@
+<%- include('templates/cabecera', {titulo: "Detalle de mascota"});%>
+    <div class="container mt-5 mb-5">
+        <% if (!error) { %>
+            <h1 class="text-center text-info text-capitalize">Información de la mascota</h1>
+            <div class="row my-4">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <img src="/<%= mascota.imagen %>" alt="<%= mascota.descripcion %>" />
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <p class="d-block h3"><strong>Nombre: </strong><%= mascota.nombre %></p>
+                </div >
+                <div class="col-md-12 d-flex justify-content-center">
+                    <p class="h3"><strong>Edad: </strong><%= mascota.edad %></p>
+                </div>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <p class="h3"><strong>Raza: </strong><%= mascota.raza %></p>
+                </div>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <p class="h3"><strong>Descripción: </strong><%= mascota.descripcion %></p>
+                </div>
+            </div>
+        <% }else{ %>
+            <div class="d-flex justify-content-center mb-4">
+                <img src="/error.jpg" alt="imagen de error">
+            </div>
+            <div class="alert alert-danger" role="alert">
+                <p>
+                    Ha ocurrido un error y no se ha encontrado a la mascota requerida. Asegurese de que el id proporcionado es el correcto y vuelva a ingresar la solicitud.
+                </p>
+                <p>
+                    <strong>Respuesta del servidor: </strong><%- mensaje %>
+                </p>
+            </div>
+        <% } %>
+        <div class="row d-flex justify-content-center">
+            <a class="btn btn-secondary" href="/mascotas">
+                Volver a mascotas
+            </a>
+        </div>
+    </div>
+<%- include('templates/footer');%></div>

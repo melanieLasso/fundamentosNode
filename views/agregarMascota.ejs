@@ -1,0 +1,29 @@
+<%- include('templates/cabecera', {titulo: "Agregar mascota"});%>
+    <div class="container mt-5 mb-5">
+        <h1 class="my-5"><%= titulo %></h1>
+        <form action="/mascotas" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" name="nombre" placeholder="Ingrese el nombre de la mascota...">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Edad</label>
+                <input type="text" class="form-control" name="edad" placeholder="Ingrese la edad de la mascota...">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Raza</label>
+                <input type="text" class="form-control" name="raza" placeholder="Ingrese la raza de la mascota...">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripción</label>
+                <input type="text" class="form-control" name="descripcion" placeholder="Ingrese la descripción de la mascota...">
+            </div>
+            <div class="mb-3">
+                <input type="file" name="imagen">
+            </div>
+            <button type="submit" class="btn btn-secondary py-2 px-4 mt-2">Agregar mascota</button>
+        </form>
+    </div>
+    
+
+<%- include('templates/footer');%>

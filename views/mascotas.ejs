@@ -1,0 +1,22 @@
+<%-include('templates/cabecera', {titulo: "Pagina de mascotas"})%>
+    <div class="container mt-5 mb-5">
+        <% if (arrayMascotas.length > 0) { %>
+            <div class="row">
+                <% arrayMascotas.forEach(mascota => { %>
+                    <div class="col-6">
+                        <div class="card mt-4 mb-4">
+                            <img src="<%=mascota.imagen%>" height="300px" class="card-img-top" alt="<%=mascota.descripcion%>">
+                            <div class="card-body">
+                              <h5 class="card-title text-capitalize"><%=mascota.nombre%></h5>
+                              <p class="card-text"><%=mascota.descripcion%></p>
+                              <p class="card-text"><strong>Edad: </strong><%=mascota.edad%></p>
+                              <p class="card-text"><strong>Raza: </strong><%=mascota.raza%></p>
+                              <a href="/mascotas/<%= mascota._id %>" class="btn btn-info">Ver Información</a>
+                            </div>
+                          </div>
+                    </div>    
+                <% }) %>
+            </div>
+        <% } %>
+    </div>
+<%- include('templates/footer');%>

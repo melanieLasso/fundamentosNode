@@ -1,3 +1,20 @@
 <%- include('templates/cabecera', {titulo: "404"});%>
-    <h1>Página no encontrada ERROR 404</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <h1 class="text-info my-4"> Página no encontrada </h1>
+            </div>
+            <div class="col-12 d-flex justify-content-center my-4">
+                <img src="/error.jpg" alt="imagen de error">
+            </div>
+            <div class="col-12 d-flex justify-content-center my-4">
+                La página que busca no se encuentra disponible o ha sido eliminada, por favor regrese al inicio.
+            </div>
+            <div class="col-12 d-flex justify-content-center my-4">
+                <a class="btn btn-secondary" href="/">
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
 <%- include('templates/footer');%>
